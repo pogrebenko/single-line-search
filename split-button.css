@@ -1,0 +1,253 @@
+.gui-split-button {
+  height: 38px;
+
+  display: inline-flex;
+  /*border-radius: 8px;*/
+  border-radius: 0 8px 8px 0;
+  background: #060e9f;
+  color: #fff;
+  fill: #fff;
+}
+
+.gui-split-button button,
+.gui-split-button a
+{
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  border: none;
+
+  display: inline-flex;
+  white-space: nowrap;
+
+  color: #fff;
+
+  border-radius: 0;
+}
+
+.gui-split-button .form-checkbox:checked + label::before
+{
+  background: #00859b;
+}
+.gui-split-button .form-checkbox + label:hover
+{
+  text-decoration: underline;
+}
+.gui-split-button .form-checkbox + label
+{ /*chrome*/
+  display: block;
+}
+
+.gui-split-button button:hover,
+.gui-split-button a:hover/*,
+.gui-split-button button:focus,
+.gui-split-button a:focus*/
+{
+  background: #00859b;
+  color: #fff;
+}
+
+.gui-split-button button:hover > svg,
+.gui-split-button a:hover > svg/*,
+.gui-split-button button:focus > svg,
+.gui-split-button a:focus > svg*/
+{
+  stroke: currentColor;
+  fill: none;
+}
+
+.gui-split-button button:active,
+.gui-split-button a:active {
+  background: #5897fb;
+}
+
+.gui-split-button > button,
+.gui-split-button > a
+{
+  border-radius: 8px 0 0 8px;
+}
+
+.gui-split-button > button,
+.gui-split-button button:hover,
+.gui-split-button > a,
+.gui-split-button a:hover/*,
+.gui-split-button button:focus,
+.gui-split-button a:focus*/
+{
+  text-shadow: 0 1px 0 #5897fb;
+}
+
+.gui-split-button > .gui-popup-button > svg,
+.gui-split-button button:hover > svg,
+.gui-split-button a:hover > svg/*,
+.gui-split-button button:focus > svg,
+.gui-split-button a:focus > svg*/
+{
+  filter: drop-shadow(0 1px 0 #5897fb);
+}
+
+/*
+.gui-split-button svg {
+  width: 20px;
+  height: 20px;
+
+  box-sizing: content-box;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+*/
+
+
+
+.gui-split-button-separator {
+  height: 37px;
+  box-shadow: 0 0 0 1px #fff;
+  /*margin-top: 0;*/
+}
+
+
+
+
+.gui-popup-button {
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /*border-inline-start: 1px solid #a0a0a0;*/
+
+  border-radius: 0 6px 6px 0;
+
+  background: #060e9f;
+}
+
+.gui-popup-button:hover,
+.gui-popup-button:focus
+{
+  background: #00859b;
+}
+
+.gui-popup-button:focus {
+  /* iOS fix */
+  outline: none;
+}
+
+.gui-popup-button:active {
+  background: #5897fb;
+}
+
+.gui-popup-button > svg {
+  width: 20px;
+  height: 20px;
+
+  box-sizing: content-box;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+
+  transition: transform 100ms ease;
+}
+
+/* .gui-popup-button:hover > svg,*/
+/*.gui-popup-button:focus > svg {
+  transition-duration: 500ms;
+  transform: rotateZ(.5turn);
+}
+*/
+/*.gui-popup-button:hover > .gui-popup,*/
+/*visibility: visible;*/
+/*display: flex;*/
+/*
+.gui-popup-button:focus > .gui-popup {
+  opacity: 1;
+
+  transition-duration: 500ms;
+  transform: translateY(0);
+}
+*/
+.gui-popup-button > .gui-popup {
+  /*transform: translateY(5px);*/
+
+  transition:
+    opacity 100ms ease,
+    transform 100ms ease;
+}
+
+
+
+
+.gui-popup {
+
+  /*transform: scale(0);*/
+  /*transform: translate(-999px, 0px);*/
+
+  opacity: 0;
+  /*visibility: hidden;*/
+  /*display: none;*/
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  position: absolute;
+
+  top: 37px;
+  left: -37px;
+
+  padding: 1ch;
+
+  list-style-type: none;
+  background: #eeeeee;
+  color: #333;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  transition: opacity 100ms ease;
+
+  -webkit-box-shadow: 0 1px 3px 0 #333;
+  -moz-box-shadow: 0 1px 3px 0 #333;
+  box-shadow: 0 1px 4px 0 #333;
+}
+
+/* fixes iOS trying to be helpful */
+.gui-popup:focus {
+  outline: none
+}
+
+.gui-popup svg {
+  width: 18px;
+  height: 18px;
+
+  box-sizing: content-box;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+
+  margin-right: 4px;
+
+  fill: #eeeeee;
+  stroke: #060e9f;
+}
+
+.gui-popup label,
+.gui-popup button,
+.gui-popup a
+{
+  color: #333;
+  width: 100%;
+  padding: 3px;
+
+  pointer-events: none;
+  position: relative; /*IE11*/
+}
+.gui-popup li
+{
+  white-space: nowrap;
+}
